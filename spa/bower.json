@@ -1,0 +1,12 @@
+{
+  "name": "SPA",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.2.15",
+    "bootstrap": "~3.0.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.15",
+    "angular-scenario": "1.2.15"
+  }
+}
