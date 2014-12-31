@@ -6,7 +6,7 @@ import org.eclipse.jetty.webapp.WebAppContext;
 public class Main {
 
   public static void main(String[] args) {
-    WebAppContext webAppContext = new WebAppContext("src/main/webapp", "/addressbook");
+    WebAppContext webAppContext = new WebAppContext("src/main/webapp", "/productivity");
     new Main().startServer(webAppContext);
   }
 

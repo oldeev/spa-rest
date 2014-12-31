@@ -4,7 +4,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 
-import com.ayyagari.sparest.rest.PersonRestResource;
+import com.ayyagari.sparest.rest.ToDoResource;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
@@ -21,7 +21,7 @@ public class GuiceListener extends GuiceServletContextListener {
       protected void configureServlets() {
 
         /* bind the REST resources */
-        bind(PersonRestResource.class);
+        bind(ToDoResource.class);
 
         /* bind jackson converters for JAXB/JSON serialization */
 //        bind(MessageBodyReader.class).to(JacksonJsonProvider.class);

@@ -87,7 +87,7 @@
                         archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
                     },
                     files: [{
-                        src: ['index.html'],
+                        src: ['app/index.html'],
                         dest: '/'
                     }, {
                         src: ['dist/**'],
@@ -106,6 +106,28 @@
                 unit: {
                     options: {
                         files: ['test/**/*.js']
+                    }
+                }
+            },
+
+            wiredep: {
+
+                task: {
+
+                    // Point to the files that should be updated when
+                    // you run `grunt wiredep`
+                    src: [
+                        'app/views/**/*.html',   // .html support...
+                        'app/views/**/*.jade',   // .jade support...
+                        'app/styles/**/*.css',
+                        'app/*.html'
+                    ],
+
+                    options: {
+                        // See wiredep's configuration documentation for the options
+                        // you may pass:
+
+                        // https://github.com/taptapship/wiredep#configuration
                     }
                 }
             }
@@ -135,6 +157,7 @@
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.loadNpmTasks('grunt-bower-task');
         grunt.loadNpmTasks('grunt-karma');
+        grunt.loadNpmTasks('grunt-wiredep');
 
         grunt.registerTask('dev', ['bower', 'connect:server', 'watch:dev']);
         grunt.registerTask('test', ['bower', 'jshint', 'karma:continuous']);

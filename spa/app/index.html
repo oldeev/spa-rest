@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html ng-app="todos">
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>TODOs</title>
+  <meta charset="UTF-8">
+  <title>TODOs</title>
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="styles/app.css" rel="stylesheet"/>
 </head>
 
 <body>
-<div ng-controller="ToDoListController as vm">
-    <table>
+<div ng-controller="ToDoListController as vm" class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:medium">TODOs</div>
+    <div class="panel-body">
+      <table class="table" >
         <thead>
         <tr>
-            <td>ToDo</td>
-            <td>Details</td>
-            <td>Due Date</td>
-            <td>Reminder</td>
+          <td>Title</td>
+          <td>Details</td>
+          <td>Due Date</td>
+          <td>Reminder</td>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="todo in vm.todos">
-            <td>{{todo.title}}</td>
-            <td>{{todo.body}}</td>
-            <td>{{todo.dueDateTimeInLocal}}</td>
-            <td>{{todo.reminder}}</td>
+          <td>{{todo.title}}</td>
+          <td>{{todo.body}}</td>
+          <td>{{todo.dueDateTime | date : 'MMM d, yyyy @ h:mm a'}}</td>
+          <td>{{todo.reminder}}</td>
         </tr>
         </tbody>
-    </table>
+      </table>
+    </div>
+  </div>
 </div>
 
 <!-- bower:js -->
 <script src="../bower_components/jquery/dist/jquery.js"></script>
 <script src="../bower_components/angular/angular.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/lodash/dist/lodash.compat.js"></script>
+<script src="../bower_components/restangular/dist/restangular.js"></script>
+<!-- endbower -->
+
 
 <script src="app.js"></script>
 <script src="controllers/todoListController.js"></script>
-<!-- endbower -->
+<script src="services/todoService.js"></script>
 
 </body>
 

@@ -1,6 +1,10 @@
-( function() {
-    "use strict";
+(function () {
+  "use strict";
 
+  angular.module("todos", ['restangular']);
 
-    angular.module("spaModule", []);
+  angular.module("todos").run(function (Restangular) {
+    Restangular.setBaseUrl('http://localhost:9090/productivity/api');
+  });
+
 }());
