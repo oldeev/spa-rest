@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="todos">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>TODOs</title>
+</head>
+
+<body>
+<div ng-controller="ToDoListController as vm">
+    <table>
+        <thead>
+        <tr>
+            <td>ToDo</td>
+            <td>Details</td>
+            <td>Due Date</td>
+            <td>Reminder</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="todo in vm.todos">
+            <td>{{todo.title}}</td>
+            <td>{{todo.body}}</td>
+            <td>{{todo.dueDateTimeInLocal}}</td>
+            <td>{{todo.reminder}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+<script src="app.js"></script>
+<script src="controllers/todoListController.js"></script>
+<!-- endbower -->
+
+</body>
+
+</html>

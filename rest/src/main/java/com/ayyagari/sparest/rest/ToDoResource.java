@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path("persons")
-public class PersonRestResource {
+public class ToDoResource {
 
   @GET
   @Produces(APPLICATION_JSON)
