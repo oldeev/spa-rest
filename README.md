@@ -7,4 +7,3 @@ Web SPA (Single Page Application) front-end is written using Angularjs framework
 Building backend needs Gradle. Backend Main class starts embedded Jetty to serve up REST resources.
 
 Building web front-end requires Grunt and Bower. npm install, grunt install followed by grunt dev should start the front-end to be accessible at http://localhost:8080. Since backend is served up from Jetty at http://localhost:9090, CORS need to be disabled in your browser (For Chrome passing "--args --disable-web-security" should start Chrome with disable CORS check, please check your browser documentation if different)
-
